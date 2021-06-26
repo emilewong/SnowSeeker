@@ -19,6 +19,7 @@ class Favorites: ObservableObject {
         if let data = UserDefaults.standard.data(forKey: saveKey) {
             if let decoded = try? JSONDecoder().decode(Set<String>.self, from: data) {
                 self.resorts = decoded
+                return
             }
         }
         
